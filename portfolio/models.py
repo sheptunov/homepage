@@ -3,7 +3,8 @@ from django.db import models
 from PIL import Image, ImageOps
 from cStringIO import StringIO
 from django.core.files.uploadedfile import SimpleUploadedFile
-from django.shortcuts import get_list_or_404
+from django.shortcuts import get_list_or_404, get_object_or_404
+from django.core.exceptions import ObjectDoesNotExist
 import os
 
 class Project(models.Model):
@@ -15,8 +16,9 @@ class Project(models.Model):
     class Meta():
         verbose_name = "Project"
         verbose_name_plural = "Projects"
-        def __unicode__(self):
-            return self.title
+
+    def __unicode__(self):
+            return "%s" % self.title
 
     def get_images(self):
         try:
@@ -35,6 +37,34 @@ class Project(models.Model):
             return self.date_created.strftime("%B")
         except:
             raise(BaseException, ("Can't get PROJECT.get_month"))
+
+    def get_previous(self):
+        '''
+        Return the previous published portfolio.
+        '''
+        try:
+            print(self.get_previous_by_date_created(pk__lt=self.id))
+            return self.get_previous_by_date_created(pk__lt=self.id)
+        except ObjectDoesNotExist:
+            print("abnormal")
+            return Project.objects.last()
+
+    def get_next(self):
+        '''
+        Return the next published portfolio.
+        '''
+        try:
+            return self.get_next_by_date_created(pk__gt=self.id)
+        except ObjectDoesNotExist:
+            return Project.objects.first()
+
+    def get_ids(self):
+        '''
+        Return object.id in queryset
+        '''
+        projects = get_list_or_404(Project)
+
+
 
 
 class Entity(models.Model):

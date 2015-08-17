@@ -1581,28 +1581,52 @@ footer .b-email {
     border: 5px solid #191919;
 }
 .block-project-detail .b-leftcolumn {
-
-}
-.block-project-detail .b-leftcolumn.state__active {
-    background: #191919;
-}
-.block-project-detail .b-leftcolumn div {
+    top: 0;
     position: absolute;
     background: #f6cd53;
     text-align: center;
-    width: 100px;
-    left: -100px;
+    width: 120px;
+    left: -120px;
     transition: .5s ease;
 }
-.block-project-detail .b-leftcolumn div.state__active {
-    transition: 0.5s ease;
-    position: absolute;
+.block-project-detail .b-leftcolumn .b-project-nav {
+
+}
+.block-project-detail .b-leftcolumn .b-project-nav .b-link {
+    display: block;
+    transition: .3s ease;
+}
+.block-project-detail .b-leftcolumn .b-project-nav .b-link:hover .b-span {
+    text-decoration: none;
     background: #191919;
     color: #f6cd53;
-    /* transition: .5s ease; */
-    text-align: center;
-    width: 100px;
-    left: -100px; }
+}
+.block-project-detail .b-leftcolumn .b-project-nav .b-span {
+    padding: 5px 0;
+    display: block;
+}
+.block-project-detail .b-leftcolumn .b-project-nav .b-link.list .b-span {
+    padding: 15px 0;
+}
+.block-project-detail .b-leftcolumn div.box2 .b-span {
+    text-decoration: underline;
+}
+.block-project-detail .b-leftcolumn .b-project-nav .b-span.fa {
+    text-decoration: none;
+}
+.block-project-detail .b-leftcolumn.state__active {
+    background: #191919;
+    color: #f6cd53;
+}
+.block-project-detail .b-leftcolumn.state__active .b-project-nav .b-span {
+    text-decoration: none;
+}
+.block-project-detail .b-leftcolumn div {
+}
+.block-project-detail .b-leftcolumn div.box2 {
+}
+.block-project-detail .b-leftcolumn.state__active {
+     }
 .block-project-detail .wrapper .box1 {
     top: 0;
     height: 116px; }
@@ -1614,16 +1638,15 @@ footer .b-email {
 .block-project-detail .wrapper .box1 time span {
     font-weight: 400;
     font-size: 26px;
-    line-height: 7px; }
+    line-height: 7px;
+}
 .block-project-detail .wrapper .box2 {
-    top: 117px;
-    height: 52px; }
+}
 .block-project-detail .wrapper .box2 p {
     line-height: 52px; }
 .block-project-detail .wrapper .box3 {
-    height: 66px;
-    padding-top: 10px;
-    top: 170px; }
+    padding: 15px 0;
+}
 .block-project-detail .wrapper .box3 .fa-comments-o {
     display: block; }
 .block-project-detail .wrapper .box3 .fa-comments-o:before {
