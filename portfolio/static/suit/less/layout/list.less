@@ -1,0 +1,131 @@
+.search-container {
+    margin-bottom: 20px;
+    .btn-submit {
+        margin-right: 5px;
+    }
+    .search-filters {
+        select, input {
+            margin-right: 7px;
+            &:last-child {
+                margin-right: 5px;
+            }
+        }
+    }
+    .query-search {
+        margin-right: 5px;
+    }
+    .active {
+        border-color: orange;
+        box-shadow: 0 0 1px 0px orange;
+    }
+    .result-count {
+    }
+    .btn-reset {
+        padding-left: 8px;
+        padding-right: 8px;
+        margin: 0 10px 0 0;
+        .glyphicon {
+            top: 2px;
+        }
+    }
+}
+#content-main {
+    margin-top: 5px;
+}
+#changelist-filter {
+    h3 {
+        display: none;
+    }
+    .panel-body {
+        padding-left: 0;
+    }
+    .panel ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        li {
+            a {
+                display: inline-block;
+                padding-bottom: 3px;
+            }
+            &:last-child a {
+                padding-bottom: 0;
+            }
+            a, &:first-child a, &.selected:first-child a {
+                margin-left: 20px;
+                border-left: 0;
+                padding-left: 0;
+            }
+            &.selected {
+                a {
+                    margin-left: -3px;
+                    font-weight: bold;
+                    color: @text-color;
+                    border-left: 3px solid @active-color;
+                    padding-left: 20px;
+                }
+            }
+        }
+    }
+}
+#changelist-form {
+    #action-toggle {
+        display: none;
+    }
+
+    .actions {
+        .action-label {
+            display: none;
+        }
+        span {
+            &.all,
+            &.action-counter,
+            &.clear,
+            &.question,
+            &.action-label {
+                display: none;
+            }
+        }
+        select {
+            .form-control-mixin;
+        }
+        .btn {
+            vertical-align: inherit;
+            margin-right: 10px;
+        }
+    }
+    .changelist-save {
+        margin-top: -35px;
+    }
+    img[alt=True], img[alt=False] {
+        .replace-img;
+        font-size: 12px;
+        color: @brand-success;
+        vertical-align: middle;
+        &:after {
+            content: "\e013";
+        }
+    }
+    img[alt=False] {
+        &:after {
+            color: @brand-danger;
+            content: "\e014";
+        }
+    }
+}
+.paginator {
+    margin: 15px 0;
+    .pagination {
+        margin: 0 15px 0 0;
+        float: left;
+    }
+    .pagination-info {
+        padding: 7px 0 0 0;
+        color: @text-muted;
+    }
+}
+.pagination > li {
+    & > a {
+        padding: 6px 11px 4px;
+    }
+}

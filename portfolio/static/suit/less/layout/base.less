@@ -1,0 +1,70 @@
+body {
+    background-color: @body-bg-color;
+}
+
+.page-header {
+    margin: 10px 0 40px;
+    font-size: 20px;
+    border-color: #ddd;
+    display: none;
+}
+
+.white-inset-shadow {
+    box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.2);
+}
+.box-shadow {
+    .box-shadow(0 1px 1px rgba(0,0,0,.05));
+}
+.btn {
+//    .white-inset-shadow;
+    font-size: @input-font-size;
+}
+
+.btn-lg {
+}
+.btn-lg, .btn-group-lg > .btn {
+    padding: 8px 20px;
+    font-size: 15px;
+}
+
+.main-messages {
+    margin-top: 5px;
+    ul {
+        padding-left: 20px;
+    }
+}
+
+// Buttons
+@btn-info-color: #fff;
+@btn-info-bg: @brand-info;
+@btn-info-border: darken(@btn-info-bg, 5%);
+.btn-info {
+    .button-variant(@btn-info-color; @btn-info-bg; @btn-info-border);
+}
+
+// - Primary
+@btn-primary-color: #fff;
+@btn-primary-bg: @brand-primary;
+@btn-primary-border: darken(@btn-primary-bg, 5%);
+.btn-primary {
+    .button-variant(@btn-primary-color; @btn-primary-bg; @btn-primary-border);
+}
+
+// - Success
+@btn-success-color: #fff;
+@btn-success-bg: @brand-success;
+@btn-success-border: darken(@btn-success-bg, 5%);
+.btn-success {
+    .button-variant(@btn-success-color; @btn-success-bg; @btn-success-border);
+}
+
+.btn-neutral {
+    .button-variant(@btn-success-color; @btn-success-bg; @btn-success-border);
+}
+
+.glyphlink {
+    > .glyphicon {
+        color: @brand-success;
+        margin-right: 5px;
+    }
+}

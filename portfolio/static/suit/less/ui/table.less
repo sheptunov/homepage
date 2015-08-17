@@ -1,0 +1,206 @@
+@table-border-color: #eee;
+
+@tr-odd-darkness: 2.5%;
+@tr-hover-darkness: 4%;
+@tr-odd-bg-color: darken(#fff, @tr-odd-darkness);
+@tr-hover-bg-color: darken(#fff, @tr-hover-darkness);
+@tr-odd-hover-bg-color: darken(@tr-odd-bg-color, @tr-hover-darkness);
+
+.table-primary {
+    .box-shadow;
+    border: 0;
+    background-color: #fff;
+    th, td {
+        input {
+            margin: 0;
+        }
+    }
+    tbody th {
+        font-weight: normal;
+    }
+    & > thead > tr {
+        @local-th-padding-top: 7px;
+        @local-th-padding-sides: 10px;
+        @local-th-padding-bottom: 6px;
+        & > th {
+            box-shadow: inset 1px 0 0 rgba(255, 255, 255, .2);
+            padding: @local-th-padding-top @local-th-padding-sides @local-th-padding-bottom;
+            background-color: @b-gray-light;
+            border: 0;
+            font-weight: normal;
+
+            // Sorting
+            .text {
+                & > a, & > span {
+                    padding: @local-th-padding-top @local-th-padding-sides @local-th-padding-bottom;
+                    margin: -@local-th-padding-top -@local-th-padding-sides -@local-th-padding-bottom;
+                    display: block;
+                }
+            }
+            .relative-wrapper {
+                position: relative;
+                display: inline;
+                float: right;
+                width: 55px;
+            }
+            .sortoptions {
+                right: -50px;
+                position: absolute;
+                a, .sortpriority {
+                    display: inline-block;
+                    float: left;
+                    padding: 0 3px;
+                }
+                .sortpriority {
+                    color: @b-gray-lighter;
+                    padding-right: 4px;
+                }
+                .sortremove, .toggle {
+                    display: block;
+                    width: 12px;
+                    height: 12px;
+                    opacity: .4;
+                    margin-right: 5px;
+                    &:hover {
+                        opacity: 0.8;
+                    }
+                }
+            }
+            &.sorted {
+                padding-right: 55px;
+                background-color: @b-gray;
+                .text > a {
+                    color: @gray-lightest;
+                }
+            }
+
+        }
+        & > th, .text, a {
+            color: white;
+        }
+    }
+    & > thead > tr > th:first-child {
+        border-left: 0;
+    }
+    & > thead > tr > th:last-child {
+        border-right: 0;
+    }
+    & > tbody > tr {
+        &:nth-child(odd) {
+            & > td, & > th {
+                //                background-color: @tr-odd-bg-color;
+            }
+        }
+        & > td, & > th {
+            box-shadow: inset 1px 1px 0 #fff;
+            border-color: @table-border-color;
+            padding: 5px 10px 4px 10px;
+            border-left-width: 0;
+            border-right-width: 0;
+        }
+        &:last-child {
+            & > td, & > th {
+                border: 0;
+            }
+        }
+    }
+    &.table-hover > tbody > tr {
+        &:nth-child(odd):hover {
+            //            & > td, & > th {
+            background-color: @tr-odd-hover-bg-color;
+            //            }
+        }
+        &:hover {
+            //            th, td {
+            background-color: @tr-hover-bg-color;
+            //            }
+        }
+    }
+    .action-checkbox-column {
+        width: 40px;
+    }
+}
+/* Row special states */
+.table-row-variant(@state; @background) {
+    // Exact selectors below required to override `.table-striped` and prevent
+    // inheritance to nested tables.
+    .table-primary.table > thead > tr,
+    .table-primary.table > tbody > tr,
+    .table-primary.table > tfoot > tr {
+        > td.@{state},
+        > th.@{state},
+        &.@{state} > td,
+        &.@{state} > th {
+            box-shadow: inset 1px 1px 0 rgba(255, 255, 255, .5);
+            background-color: @background;
+            border-color: darken(@background, 5%);
+        }
+    }
+
+    // Hover states for `.table-hover`
+    // Note: this is not available for cells or rows within `thead` or `tfoot`.
+    .table-primary.table-hover > tbody > tr {
+        > td.@{state}:hover,
+        > th.@{state}:hover,
+        &:hover > .@{state},
+        &.@{state}:nth-child(odd):hover > td,
+        &.@{state}:nth-child(odd):hover > th,
+        &.@{state}:hover > td,
+        &.@{state}:hover > th {
+            box-shadow: inset 1px 1px 0 rgba(255, 255, 255, .3);
+            background-color: darken(@background, 5%);
+            border-color: darken(@background, 10%);
+        }
+    }
+}
+// Generate the contextual variants
+.table-row-variant(active; @table-bg-active);
+.table-row-variant(success; @state-success-bg);
+.table-row-variant(info; @state-info-bg);
+.table-row-variant(warning; @state-warning-bg);
+.table-row-variant(danger; @state-danger-bg);
+.table-row-variant(selected; #83b3c3);
+
+.table-primary.table-hover > tbody > tr {
+    &.selected {
+        th, td {
+            box-shadow: inset 1px 1px 0 rgba(255, 255, 255, .3);
+            text-shadow: none;
+            color: white;
+            a {
+                color: white;
+                text-decoration: underline;
+                &:hover {
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+}
+.table {
+    &.table-form-like {
+        background-color: @form-bg-color;
+        > tbody > tr > td, th {
+            border-color: @body-bg-color;
+        }
+        > tbody > tr > th {
+            background-color: #fff;
+            font-weight: normal;
+        }
+        > tbody > tr > td {
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+        &.table-condensed {
+            > tbody > tr > th {
+                padding-right: 10px;
+            }
+        }
+    }
+    &.table-non-fluid {
+        width: auto !important;
+        th {
+            min-width: 150px;
+        }
+    }
+}

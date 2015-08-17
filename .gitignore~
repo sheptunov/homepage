@@ -1,9 +1,0 @@
-temp/
-static/
-portfolio/static/admin/
-portfolio/static/cms/
-portfolio/static/debug_toolbar/
-portfolio/static/debug_toolbar/
-portfolio/static/django_extensions/
-portfolio/static/suit*
-

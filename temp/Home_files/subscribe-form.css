@@ -1,0 +1,94 @@
+/*==================     Subscribe Form     ======================*/
+.subscribe-form {
+  position: relative;
+  display: block;
+  margin-top: 58px; }
+  .subscribe-form label {
+    display: inline-block;
+    position: relative;
+    padding: 6px 1px;
+    background: none;
+    border-bottom: 1px solid #424242;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box; }
+  .subscribe-form label.name {
+    width: 208px; }
+  .subscribe-form label.email {
+    width: 208px; }
+  .subscribe-form input {
+    outline: none;
+    background-color: transparent;
+    border: none;
+    -webkit-appearance: none;
+    border-radius: 0;
+    vertical-align: baseline;
+    box-shadow: none;
+    color: #fff;
+    display: block;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    font-size: 15px;
+    line-height: 18px;
+    height: 22px; }
+  .subscribe-form a[data-type="submit"] {
+    margin-left: 13px;
+    display: inline-block;
+    font-weight: 400;
+    font-size: 42px;
+    line-height: 36px;
+    text-align: center;
+    background: none;
+    color: #fff; }
+    .subscribe-form a[data-type="submit"]:hover {
+      color: #f6cd53; }
+
+@media (max-width: 979px) {
+  .subscribe-form {
+    margin-top: 20px; } }
+.subscribe-form .error, .subscribe-form .success {
+  position: absolute;
+  bottom: 100%;
+  margin-bottom: -10px;
+  text-align: left;
+  padding: 4px 10px;
+  left: 5px;
+  right: 5px;
+  font-size: 10px;
+  line-height: 12px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px; }
+.subscribe-form .error {
+  display: none;
+  color: #f00;
+  overflow: hidden;
+  -moz-transition: 0.3s all ease;
+  -o-transition: 0.3s all ease;
+  -webkit-transition: 0.3s all ease;
+  transition: 0.3s all ease; }
+.subscribe-form label.invalid .error {
+  display: block; }
+.subscribe-form .success {
+  display: none;
+  color: #0f0; }
+
+@media (min-width: 980px) and (max-width: 1199px) {
+  .subscribe-form label.email {
+    width: 171px; }
+
+  .subscribe-form a[data-type="submit"] {
+    margin-left: 0; } }
+@media (min-width: 768px) and (max-width: 979px) {
+  .subscribe-form {
+    text-align: center; } }
+@media (max-width: 979px) {
+  .subscribe-form label.name,
+  .subscribe-form label.email {
+    display: block;
+    width: 100%; }
+  .subscribe-form * + label,
+  .subscribe-form * + a[data-type='submit'] {
+    margin-top: 10px;
+    margin-left: 0; } }

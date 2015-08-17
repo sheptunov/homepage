@@ -1,0 +1,31 @@
+.breadcrumb {
+    display: inline-block;
+    font-size: 13px;
+    padding: 6px 12px;
+    border-radius: @border-radius-base;
+    background-color: transparent;
+    margin-bottom: 20px;
+    .white-shadow;
+    .active {
+        font-weight: bold;
+    }
+}
+
+.breadcrumb-light {
+    // Date hierarchy component
+    &.toplinks {
+        font-size: 12px;
+        li {
+            margin-right: 5px;
+            &:before {
+                display: none;
+            }
+        }
+    }
+}
+
+// Hide default breadcrumb from the lists
+.change-list .container-fluid > .row > div > .breadcrumb {
+    margin-bottom: 20px;
+    display: none;
+}

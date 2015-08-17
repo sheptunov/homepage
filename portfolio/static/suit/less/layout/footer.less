@@ -1,0 +1,47 @@
+html {
+    position: relative;
+    min-height: 100%;
+}
+body {
+    margin-bottom: @footer-height;
+}
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    min-height: @footer-height;
+    background-color: #e5e5e5;
+    .white-shadow;
+    .container-fluid {
+        padding-top: 15px;
+        padding-left: @outer-gutter;
+        padding-right: @outer-gutter;
+    }
+    .branding {
+        text-align: center;
+        font-weight: bold;
+        .version {
+            color: @text-muted;
+            font-size: 11px;
+            font-weight: normal;
+            a {
+                color: @text-muted;
+            }
+        }
+    }
+    .copyright {
+        font-size: 11px;
+        text-align: right;
+    }
+    .tools {
+        font-size: 11px;
+        a {
+            display: inline-block;
+            margin-right: 10px;
+            .glyphicon {
+                color: @gray-dark;
+                margin-right: 5px;
+            }
+        }
+    }
+}

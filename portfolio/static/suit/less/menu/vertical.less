@@ -1,0 +1,91 @@
+.suit-menu-vertical {
+    #wrapper {
+        padding-left: 0;
+        -webkit-transition: all 0.5s ease;
+        -moz-transition: all 0.5s ease;
+        -o-transition: all 0.5s ease;
+        transition: all 0.5s ease;
+
+        &.toggled {
+            padding-left: @vertical-menu-width;
+            #menu-wrapper {
+                width: @vertical-menu-width;
+            }
+            #page-content-wrapper {
+                position: absolute;
+                margin-right: -250px;
+            }
+        }
+    }
+
+    #menu-wrapper {
+        z-index: 1000;
+        position: fixed;
+        left: @vertical-menu-width;
+        width: 0;
+        height: 100%;
+        margin-left: -@vertical-menu-width;
+        overflow-y: auto;
+        background: @navbar-inverse-bg;
+        -webkit-transition: all 0.5s ease;
+        -moz-transition: all 0.5s ease;
+        -o-transition: all 0.5s ease;
+        transition: all 0.5s ease;
+    }
+
+    #page-content-wrapper {
+        width: 100%;
+        padding: 15px;
+    }
+    .nav-suit-menu {
+        > li {
+            > a {
+                padding: 5px 15px;
+            }
+            a:hover {
+                color: @gray-light;
+                background-color: inherit;
+            }
+        }
+        .nav {
+            margin: 5px 0 10px;
+            & > li {
+                > a {
+                    padding: 3px 0 3px 40px;
+                    &:hover {
+                        color: @gray-light;
+                    }
+                }
+                &.active > a {
+                    background-color: inherit;
+                    color: white;
+                }
+            }
+        }
+    }
+}
+@media (min-width: 768px) {
+    .suit-menu-vertical {
+        #wrapper {
+            padding-left: @vertical-menu-width;
+            &.toggled {
+                padding-left: 0;
+                #menu-wrapper {
+                    width: 0;
+                }
+                #page-content-wrapper {
+                    position: relative;
+                    margin-right: 0;
+                }
+            }
+        }
+
+        #menu-wrapper {
+            width: @vertical-menu-width;
+        }
+
+        #page-content-wrapper {
+            padding: 20px;
+        }
+    }
+}

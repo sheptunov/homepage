@@ -23,11 +23,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="block-project-detail.html" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="block-project-detail.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/portfolio/templates/portfolio/block-project-detail.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-17.580645" vertical-offset="313" max-vertical-offset="3250">
-              <caret line="33" column="69" selection-start-line="33" selection-start-column="69" selection-end-line="33" selection-end-column="69" />
+            <state vertical-scroll-proportion="0.5709571" vertical-offset="781" max-vertical-offset="3146">
+              <caret line="47" column="30" selection-start-line="47" selection-start-column="30" selection-end-line="47" selection-end-column="30" />
               <folding />
             </state>
           </provider>
@@ -77,10 +77,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="style.css" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="style.css" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/portfolio/static/portfolio/css/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.73165387" vertical-offset="42206" max-vertical-offset="43758">
+            <state vertical-scroll-proportion="-22.814816" vertical-offset="42206" max-vertical-offset="43758">
               <caret line="1647" column="19" selection-start-line="1647" selection-start-column="19" selection-end-line="1647" selection-end-column="19" />
               <folding />
             </state>
@@ -166,8 +166,8 @@
         <option value="$PROJECT_DIR$/portfolio/forms.py" />
         <option value="$PROJECT_DIR$/homepage/settings.py" />
         <option value="$PROJECT_DIR$/portfolio/models.py" />
-        <option value="$PROJECT_DIR$/portfolio/templates/portfolio/block-project-detail.html" />
         <option value="$PROJECT_DIR$/portfolio/static/portfolio/css/style.css" />
+        <option value="$PROJECT_DIR$/portfolio/templates/portfolio/block-project-detail.html" />
       </list>
     </option>
   </component>
@@ -528,8 +528,8 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="24" width="1920" height="1056" extended-state="7" />
-    <editor active="false" />
+    <frame x="0" y="24" width="1920" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -659,14 +659,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/portfolio/templates/portfolio/block-project-detail.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-17.580645" vertical-offset="313" max-vertical-offset="3250">
-          <caret line="33" column="69" selection-start-line="33" selection-start-column="69" selection-end-line="33" selection-end-column="69" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/portfolio/forms.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="364">
@@ -679,8 +671,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/portfolio/static/portfolio/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.73165387" vertical-offset="42206" max-vertical-offset="43758">
+        <state vertical-scroll-proportion="-22.814816" vertical-offset="42206" max-vertical-offset="43758">
           <caret line="1647" column="19" selection-start-line="1647" selection-start-column="19" selection-end-line="1647" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/portfolio/templates/portfolio/block-project-detail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5709571" vertical-offset="781" max-vertical-offset="3146">
+          <caret line="47" column="30" selection-start-line="47" selection-start-column="30" selection-end-line="47" selection-end-column="30" />
           <folding />
         </state>
       </provider>
