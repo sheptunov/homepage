@@ -1,0 +1,62 @@
+{% load url from future %}
+<section class="block-feedback well2 bg-secondary3" id="feedback">
+    <div class="container">
+        <h3 class="center">mailbox</h3>
+        <div class="row offset3">
+            <form id="contact-form" name="feedback" class="contact-form" method="POST" action="/" enctype="multipart/form-data">
+                <fieldset form="feedback">
+                    <div class="grid_12">
+                        {% csrf_token %}
+                        <div class="form-status">
+                            <p class="alert alert-success success hidden">Your Message has been sent.</p>
+                            <p class="alert alert-danger fail hidden">Can't send your Message.</p>
+                        </div>
+                    </div>
+                    {% for field in form %}
+                        {% if field.name == "message" %}
+                            <div class="grid_12">
+                                <label class="{{ field.label }}">
+                                    <textarea class="b-textarea required" minlength="2" placeholder="{{ field.label }}*" name="{{ field.label|lower }}"></textarea>
+                                </label>
+                            </div>
+                        {% else %}
+                            <div class="grid_12">
+                                <label class="{{ field.label }}">
+                                    <input class="b-input {% if field.name != "email" %}required{% else %}email{% endif %}" minlength="2" placeholder="{{ field.label }}{% if field.name != "email" %}*{% endif %}" type="text" name="{{ field.label|lower }}" value="">
+                                </label>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                    <div class="btn-wr">
+                        <input class="btn b-submit b-button" type="submit" value="send message"/>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</section>
+<script type="application/javascript">
+    $(document).ready(function(){
+        $("#contact-form").validate({
+            submitHandler: function(form) {
+                $(".form-status > p.alert").addClass('hidden');
+                $.ajax({
+                    data: $("#contact-form").serialize(),
+                    type: "POST",
+                    url: "{% url "index" %}"
+                }).success(function() {
+                    console.log('Message sent');
+                    $(".form-status .fail").hide();
+                    $(".form-status .success").removeClass('hidden');
+                }).error(function(){
+                    console.log('Message not sent');
+                    $(".form-status .success").hide();
+                    $(".form-status .fail").removeClass('hidden');
+                }).done(function(){
+                    $("#contact-form .valid").removeClass('valid');
+                    $('#contact-form .error').removeClass("error");
+                });
+            }
+        });
+    })
+</script>

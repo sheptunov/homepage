@@ -1,0 +1,27 @@
+{% extends "portfolio/base.html" %}
+
+{% block hello %}
+    {% include "portfolio/block-hello.html"%}
+{% endblock %}
+
+{% block header %}
+    {% include "portfolio/block-header.html" with menu='index' %}
+{% endblock %}
+
+{% block content %}
+    {% block about %}
+        {% include "portfolio/block-about.html" %}
+    {% endblock %}
+    {% block skills %}
+        {% include "portfolio/block-skills.html" %}
+    {% endblock %}
+    {% block benefits %}
+        {% include "portfolio/block-benefits.html" %}
+    {% endblock %}
+    {% block projects %}
+        {% include "portfolio/block-projects.html" %}
+    {% endblock %}
+    {% block feedback %}
+        {% include "portfolio/block-feedback.html" %}
+    {% endblock %}
+{% endblock %}

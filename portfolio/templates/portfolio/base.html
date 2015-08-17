@@ -1,0 +1,61 @@
+{% load staticfiles %}
+{% load i18n %}
+<!DOCTYPE html>
+<html lang="en" class="desktop landscape">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Fullstack ninja webdeveloper</title>
+    <meta charset="utf-8">
+    <link rel="icon" href="{% static "portfolio/images/favicon.ico" %}" type="image/x-icon">
+    <link rel="stylesheet" href="{% static "portfolio/css/grid.css" %}">
+    <link rel="stylesheet" href="{% static "portfolio/css/style.css" %}">
+    <link rel="stylesheet" href="{% static "portfolio/css/jquery.fancybox.css" %}">
+    <link rel="stylesheet" href="{% static "portfolio/css/subscribe-form.css" %}">
+    <script src="{% static "portfolio/js/jquery.min.js" %}"></script>
+    <script src="{% static "portfolio/js/jquery.validate.js" %}"></script>
+    <script src="{% static "portfolio/js/scrollClass.min.js" %}"></script>
+
+    <!--[if lt IE 9]>
+    <html class="lt-ie9">
+    <div style=' clear: both; text-align:center; position: relative;'>
+        <a href="http://windows.microsoft.com/en-US/internet-explorer/..">
+            <img src="{% static "portfolio/images/warning_bar_0000_us.jpg" %}" border="0" height="42" width="820"
+                 alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today."/>
+        </a>
+    </div>
+    <script src="{% static "portfolio/js/html5shiv.js" %}"></script>
+    <![endif]-->
+
+    <script src="{% static "portfolio/js/device.min.js" %}"></script>
+</head>
+<body>
+<div class="page">
+    {% block hello %}
+    {% endblock %}
+    {% block header %}
+        {% include "portfolio/block-header.html" with menu='index' %}
+    {% endblock %}
+
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    {% block footer %}
+        {% include "portfolio/block-footer.html" %}
+    {% endblock %}
+</div>
+
+<script src="{% static "portfolio/js/script.js" %}"></script>
+<a href="#" id="toTop" class="toTop fa fa-angle-up" style="display: none;"></a>
+
+<div class="rd-mobilemenu">
+    <ul class="rd-mobilemenu_ul">
+        {% include "portfolio/block-topmenu.html" %}
+    </ul>
+</div>
+<div class="rd-mobilepanel">
+    <button class="rd-mobilepanel_toggle"><span></span></button>
+    <h2 class="rd-mobilepanel_title">Hello</h2></div>
+</body>
+</html>

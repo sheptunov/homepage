@@ -1,0 +1,20 @@
+<header>
+    <div class="stuck_container center">
+        <div class="container">
+            <nav class="nav">
+                <ul class="b-list sf-menu sf-js-enabled sf-arrows" data-type="navbar">
+                    {% include 'portfolio/block-topmenu.html' with active=menu %}
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <div id="topmenu" class="block_topmenu_sticky stuck_container center" style="top: 0px; visibility: hidden; position: fixed; width: 100%; margin-top: 0px;">
+        <div class="container">
+            <nav class="nav">
+                <ul class="sf-menu sf-js-enabled sf-arrows" data-type="navbar">
+                    {% include 'portfolio/block-topmenu.html' with active=menu %}
+                </ul>
+            </nav>
+        </div>
+    </div>
+</header>

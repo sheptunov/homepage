@@ -1,0 +1,21 @@
+{% load url from future %}
+<section class="block-projects bg-primary" id="projects" data-scroll-class="visible">
+    <div class="container">
+        <h3 class="center">projects</h3>
+        <div class="projects center">
+            {% for project in projects %}
+                <div>
+                    <p>{{ image.path }}{{ image.id }}</p>
+                    <a class="b-link thumb {% if forloop.counter|divisibleby:4 %}{% cycle "even" "odd" %}{% else %}{% cycle "odd" "even" %}{% endif %}" title="{{ project.title }}" data-project-id="{{ project.id }}" href="{% url "get_project" %}{{ project.id }}">
+                        <img src="{{ project.image.thumbnail.url}}" alt="{{ project.title }}" />
+                    </a>
+                </div>
+            {% endfor %}
+            <a class="link bg-secondary" href="#">
+                <div class="link_btn">
+                    <p>View More</p>
+                </div>
+            </a>
+        </div>
+    </div>
+</section>

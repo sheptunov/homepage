@@ -1,0 +1,77 @@
+{% extends 'portfolio/base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+    <section class="block-project-detail">
+        <div class="container">
+            <div class="wrapper">
+                <div class="grid_12">
+                <div class="b-gallery">
+                    <div class="b-cover-wrapper">
+                        {% if project.get_cover %}
+                            <figure class="b-figure">
+                                <img class="b-image b-cover" src="{{ project.get_cover.image.url }}" alt="{{ project.title }}">
+                            </figure>
+                        {% endif %}
+                    </div>
+                    <div class="b-thumbnail-wrapper">{% for image in project.get_images %}<figure class="b-figure"><img class="b-image b-thumbnail {% if forloop.last %}last{% endif %}" src="{{ image.thumbnail.url }}" data-cover="{{ image.image.url }}" alt="{{ project.title }}"></figure>{% endfor %}</div>
+                </div>
+                    <div class="b-leftcolumn">
+                        <div class="box1">
+                            <time datetime="{{ project.date_created.year }}">{{ project.date_created.day }} <br>
+                                <span>{{ project.get_month|slice:":3" }}.</span></time>
+                        </div>
+                        <div class="box2">
+                            <section class="b-tags-wrapper">
+                                <ul class="b-list b-tags">
+                                    <li class="b-list-item">
+                                        {{ project.tags }}
+                                    </li>
+                                </ul>
+                            </section>
+                        </div>
+                        <div class="box3">
+                            <span class="fa fa-comments-o"></span>
+                            <a href="#">2 comments</a>
+                        </div>
+                    </div>
+                    <div class="b-description">
+                        <h5>Nam elit agna,endrerit sit amet</h5>
+
+
+                        <p>Mauris fermeum dictum magna. Sed loreet aliquam leote llus dolor dapibus eget
+                            elementum vel curs eleifend elit. Aenean aucto wisi et urna. Aliqat vosac turpis.
+                            Integer rutrum ante eu lacuestibulum libero nisl porta vel sceleris que eget
+                            malesuada at nequeVivamus eget nibh. Etiamu rsus leo vel metus. Nulla facilisi.
+                            Aenean nec eros. Vestibulum ante ipsum primis in faucibus orci luctus et trices
+                            posuere cubilia Suspendisse sollicit udin velit sed leo. Ut pharetra augue nec
+                            augentum. Donec in velit vel ipsum auue. </p>
+                        <a class="btn" href="#">read more</a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script type="text/javascript" src="{% static "portfolio/js/jquery.fancybox.js" %}"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            //$(".b-figure .b-thumbnail").fancybox();
+            $(".b-gallery").hover(function(){
+                $(".b-leftcolumn > div").addClass('state__active');
+
+            }, function(){
+                $(".b-leftcolumn > div").removeClass('state__active');
+            });
+
+            $(".b-gallery .b-thumbnail-wrapper .b-thumbnail").on('click', function(){
+                $(".b-gallery .b-cover-wrapper").attr('src', ($(this).attr("data-cover")));
+            });
+        });
+    </script>
+{% endblock %}
+
+
+{% block header %}
+    {% include "portfolio/block-header.html" with menu='projects' %}
+{% endblock %}
