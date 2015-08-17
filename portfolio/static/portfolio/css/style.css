@@ -1572,7 +1572,6 @@ footer .b-email {
 }
 .block-project-detail .b-figure .b-cover {
     width: 100%;
-    max-height: 600px;
 }
 .block-project-detail .b-cover-wrapper {
     border: 5px solid #f6cd53;
@@ -1586,14 +1585,15 @@ footer .b-email {
 }
 .block-project-detail .b-leftcolumn.state__active {
     background: #191919;
-    transition: .5s ease;
 }
 .block-project-detail .b-leftcolumn div {
     position: absolute;
     background: #f6cd53;
     text-align: center;
     width: 100px;
-    left: -100px; }
+    left: -100px;
+    transition: .5s ease;
+}
 .block-project-detail .b-leftcolumn div.state__active {
     transition: 0.5s ease;
     position: absolute;
@@ -1633,8 +1633,15 @@ footer .b-email {
     color: #191919; }
 .block-project-detail .wrapper .box3 a:active {
     color: #333333; }
-.block-project-detail .b-cover-wrapper .b-image {
-    max-height: 800px;
+.block-project-detail .b-cover-wrapper {
+    max-height: 700px;
+    overflow: hidden;
+}
+.block-project-detail .b-cover-wrapper .b-figure {
+    transition: all .5s ease;
+}
+.block-project-detail .b-cover-wrapper .hidden {
+    display: none;
 }
 .block-project-detail .b-thumbnail-wrapper {
     margin: 20px;
