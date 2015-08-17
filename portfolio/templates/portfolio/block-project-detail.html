@@ -26,7 +26,17 @@
                         </div>
                         <div class="box2">
                             <section class="b-project-nav">
-                                <a href="{% url 'index' %}#projects">Project list</a>
+                                <a class="b-link prev" href="{{ project.get_previous.id }}">
+                                    <span class="b-span fa fa-arrow-left"></span>
+                                    <span class="b-span">Previous</span>
+                                </a>
+                                <a class="b-link list" href="{% url 'index' %}#projects">
+                                    <span class="b-span">Project list</span>
+                                </a>
+                                <a class="b-link next" href="{{ project.get_next.id }}">
+                                    <span class="b-span fa fa-arrow-right"></span>
+                                    <span class="b-span">Next</span>
+                                </a>
                             </section>
                             <section class="b-tags-wrapper">
                                 <ul class="b-list b-tags">
@@ -79,11 +89,12 @@
                     'overlayShow'	:	false
                 }
             );
+            var leftcolumn =  $(".b-leftcolumn");
             $(".b-gallery").hover(function(){
-                $(".b-leftcolumn > div").addClass('state__active');
+                leftcolumn.addClass('state__active');
 
             }, function(){
-                $(".b-leftcolumn > div").removeClass('state__active');
+                leftcolumn.removeClass('state__active');
             });
 
             $(".b-gallery .b-thumbnail-wrapper .b-thumbnail").on('click', function(event){
