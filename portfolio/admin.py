@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from django.contrib import admin
 from django.contrib.auth.models import User, Group
-from portfolio.models import Project, Message, Entity
+from portfolio.models import Project, Message, Image
 
 from django.forms import TextInput, ModelForm, Textarea, Select
 
@@ -12,10 +12,10 @@ from suit.widgets import SuitDateWidget, SuitSplitDateTimeWidget, EnclosedInput,
 
 
 # Inline
-class EntityInline(SortableTabularInline):
-    #form = EntityInlineForm
+class ImageInline(SortableTabularInline):
+    #form = ImageInlineForm
     #fields = ('title', 'description', 'image',)
-    model = Entity
+    model = Image
     extra = 0
     verbose_name_plural = 'Picture'
     exclude = ("thumbnail",)
@@ -29,8 +29,8 @@ class ProjectAdminForm(ModelForm):
 'buttons': ['html', '|', 'formatting', '|', 'bold', 'italic']})
         }
 
-@admin.register(Entity)
-class EntityAdmin(SortableModelAdmin):
+@admin.register(Image)
+class ImageAdmin(SortableModelAdmin):
     list_display = ('title', )
     exclude = ("thumbnail",)
 
@@ -40,7 +40,7 @@ class ProjectAdmin(admin.ModelAdmin):
     form = ProjectAdminForm
     search_fields = ('title',)
     list_display = ('title',)
-    inlines = (EntityInline,)
+    inlines = (ImageInline,)
     sortable = 'order'
 
 

@@ -3,7 +3,7 @@ from django.http import HttpResponseRedirect, HttpResponseNotFound
 from django.core.urlresolvers import reverse
 from portfolio.forms import FeedbackForm
 from portfolio.models import Message, Project, Image, Email
-from django.core.mail import send_mail
+from django.core.mail import send_mail as send_email
 
 
 
@@ -31,12 +31,10 @@ def index(request):
             # Save form into new Message object
             form.save()
             # Send email
-            email = Email()
-            email_subject = ""
-            email_body = ""
-            email_address = ""
-            Email(email_subject, 'Here is the message.', 'from@example.com',
-            ['to@example.com'], fail_silently=False)
+            email = Email(subject=form.author, message=form.message, address=form.email)
+            # debug
+            print(email.__dict__)
+            send_email(email.subject, email.message, email.sent_from, [email.address], fail_silently=False)
             return HttpResponse("HTTP 200 OK")
         else:
             return HttpResponse("HTTP 404")

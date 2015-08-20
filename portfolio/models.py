@@ -6,6 +6,7 @@ from django.core.files.uploadedfile import SimpleUploadedFile
 from django.shortcuts import get_list_or_404, get_object_or_404
 from django.core.exceptions import ObjectDoesNotExist
 import os
+from transliterate import translit, get_available_language_codes
 
 class Project(models.Model):
     title = models.CharField(max_length=100, help_text="Title", blank=False)
@@ -22,12 +23,19 @@ class Project(models.Model):
             return "%s" % self.title
 
     def get_images(self):
+        """
+        Return all object images
+        """
         try:
             return get_list_or_404(Image, gallery=self.id)
         except IndexError:
             pass
 
     def get_cover(self):
+        """
+        Return first object image
+        # TODO REPLACE BY self.getimages[0]
+        """
         try:
             return get_list_or_404(Image, gallery=self.id)[0]
         except IndexError:
@@ -37,17 +45,15 @@ class Project(models.Model):
         try:
             return self.date_created.strftime("%B")
         except:
-            raise(BaseException, ("Can't get PROJECT.get_month"))
+            raise(BaseException, ("Can't get Project.get_month"))
 
     def get_previous(self):
         '''
         Return the previous published portfolio.
         '''
         try:
-            print(self.get_previous_by_date_created(pk__lt=self.id))
             return self.get_previous_by_date_created(pk__lt=self.id)
         except ObjectDoesNotExist:
-            print("abnormal")
             return Project.objects.last()
 
     def get_next(self):
@@ -94,7 +100,7 @@ class Image(models.Model):
             pil_type = 'png'
             file_extension = 'png'
         else:
-        #if mime_type == 'image/jpeg': Fur teh power
+        #if mime_type == 'image/jpeg':
             pil_type = 'jpeg'
             file_extension = 'jpg'
         # Open original photo which we want to thumbnail using PIL's Image
@@ -104,11 +110,8 @@ class Image(models.Model):
         temp_handle = StringIO()
         image.save(temp_handle, pil_type)
         temp_handle.seek(0)
-        # Save image to a SimpleUploadedFile which can be saved into
-        # ImageField
         suf = SimpleUploadedFile(os.path.split(self.image.name)[-1],
                                  temp_handle.read())
-        # Save SimpleUploadedFile into image field
         self.thumbnail.save('%s_thumbnail.%s'%(os.path.splitext(suf.name)[0], file_extension), suf, save=False)
 
     def save(self):

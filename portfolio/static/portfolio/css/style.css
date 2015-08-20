@@ -212,12 +212,12 @@ to {
 }
 }
 .scrollto, .scrollto:hover {
-	margin:30px;
 	display:block;
 	color:#FFF;
 	text-decoration:none;
 	width:200px;
 	margin:0 auto;
+    padding: 0 0 25px 0;
 }
 .scrollto--arrow {
 	padding:10px;
