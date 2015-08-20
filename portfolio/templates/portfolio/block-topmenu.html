@@ -1,12 +1,12 @@
 {% load url from future %}
 {% if active %}
-    <li class="b-list-item hello {% if active == "index" %}active{% endif %}">
+    <li class="b-list-item hello {% if active == "index" and not show_hello %}active{% endif %} {% if not show_hello %}hidden{% endif %}">
         <a href="{% url "index" %}#hello">Hello</a>
     </li>
-    <li class="b-list-item about {% if active == "about" %}active{% endif %}">
+    <li class="b-list-item about {% if active == "about" or active == "index" and show_hello %}active{% endif %}">
         <a href="{% url "index" %}#about">About</a>
     </li>
-    <li class="b-list-item skills" {% if active == "skills" %}active{% endif %}>
+    <li class="b-list-item skills {% if active == "skills" %}active{% endif %}">
         <a href="{% url "index" %}#skills">Skills</a>
     </li>
     <li class="b-list-item projects {% if active == "projects" %}active{% endif %}">

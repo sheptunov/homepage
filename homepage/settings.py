@@ -27,7 +27,7 @@ SECRET_KEY = 'ddt68g4u8l)cee*s%8&!1-g=yy8jzog$mqs@7#-eu04+ahxo&t'
 # manage.py collectstatic when it's False
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['109.234.38.26']
 
 
 # Application definition

@@ -10,7 +10,7 @@
 
 		$(this).each(function(){
 			var $this=$(this)
-				,posY=$("#hello").outerHeight()+$("header").outerHeight() - 70
+				,posY=$("#hello").outerHeight()+$("header").outerHeight()
 				,isStuck=false
 				,clone=$("#topmenu").addClass(opt.stuckClass)//$this.clone().appendTo($this.parent()).addClass(opt.stuckClass)
 				,height//=$this.outerHeight()
@@ -22,7 +22,7 @@
 				clearTimeout(tmr);
 				clone.css({top:isStuck?0:-stuckedHeight,visibility:isStuck?'visible':'hidden'});
 				tmr=setTimeout(function(){
-					posY=$("#hello").outerHeight()+$("header").outerHeight() - 70;//$this.offset().top//+$this.outerHeight()
+					posY=$("#hello").outerHeight()+$("header").outerHeight()//$this.offset().top//+$this.outerHeight()
 					height=$this.outerHeight();
 					stuckedHeight=clone.outerHeight();
 					opened=$.cookie&&$.cookie('panel1')==='opened';

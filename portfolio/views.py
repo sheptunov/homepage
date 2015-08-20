@@ -1,13 +1,18 @@
 from django.shortcuts import HttpResponse, render_to_response, render, RequestContext, get_list_or_404, get_object_or_404
 from django.http import HttpResponseRedirect, HttpResponseNotFound
 from django.core.urlresolvers import reverse
-from forms import FeedbackForm
-from models import Message, Project, Entity
+from portfolio.forms import FeedbackForm
+from portfolio.models import Message, Project, Image, Email
+from django.core.mail import send_mail
+
+
+
+
 
 def index(request):
     '''
     Index page.
-    Also that view serve feedback(message) form submission, if got POST type request
+    Also that view serve feedback(message) form submission, if http request type is POST(request.method == POST)
     '''
     form = FeedbackForm()
     projects = get_list_or_404(Project)
@@ -16,17 +21,25 @@ def index(request):
     # Show hello for first time visit 
     request.session['show_hello'] = False
     show_hello = request.session.get('show_hello', True)
-    #
-    context = {'form': form, 'projects': projects, "show_hello": show_hello }
+    # debug
+    context = {'form': form, 'projects': projects, "show_hello": True} # show_hello }
     # Send message
     if request.method == "POST":
         form = FeedbackForm(request.POST or None)
         context['form'] = form
         if form.is_valid():
+            # Save form into new Message object
             form.save()
+            # Send email
+            email = Email()
+            email_subject = ""
+            email_body = ""
+            email_address = ""
+            Email(email_subject, 'Here is the message.', 'from@example.com',
+            ['to@example.com'], fail_silently=False)
             return HttpResponse("HTTP 200 OK")
         else:
-            return HttpResponse("WOOPS %s" % (form.data))
+            return HttpResponse("HTTP 404")
     return render_to_response('portfolio/index.html', context, context_instance=RequestContext(request))
 
 def get_project(request, project_slug=None, project_mode=None):
