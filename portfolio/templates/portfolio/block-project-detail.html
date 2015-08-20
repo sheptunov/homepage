@@ -1,0 +1,101 @@
+{% extends 'portfolio/base.html' %}
+{% load url from future %}
+{% load staticfiles %}
+
+{% block content %}
+    <section class="block-project-detail">
+        <div class="container">
+            <div class="wrapper">
+                <div class="grid_12">
+                    <div class="b-leftcolumn">
+                        <div class="box1">
+                            <time datetime="{{ project.date_created.year }}">{{ project.date_created.day }} <br>
+                                <span>{{ project.get_month|slice:":3" }}.</span></time>
+                        </div>
+                        <div class="box2">
+                            <section class="b-project-nav">
+                                <a class="b-link prev" href="{{ project.get_previous.slug }}">
+                                    <span class="b-span fa fa-arrow-left"></span>
+                                    <span class="b-span">Previous</span>
+                                </a>
+                                <a class="b-link list" href="{% url 'index' %}#projects">
+                                    <span class="b-span">Project list</span>
+                                </a>
+                                <a class="b-link next" href="{{ project.get_next.slug }}">
+                                    <span class="b-span fa fa-arrow-right"></span>
+                                    <span class="b-span">Next</span>
+                                </a>
+                            </section>
+                        </div>
+                    </div>
+                    <div class="b-gallery">
+                        <div class="b-cover-wrapper">
+                            {% for image in project.get_images %}
+                                <figure class="b-figure {% if forloop.counter > 1 %}hidden{% else %}state__active{% endif %}">
+                                    <a class="b-link fancybox" rel="projects" href="{{ image.image.url }}">
+                                        <img class="b-image b-cover" src="{{ image.image.url }}" data-cover="{{ image.image.url }}" alt="{{ project.title }}"/>
+                                    </a>
+                                </figure>
+                            {% endfor %}
+                        </div>
+                        <div class="b-thumbnail-wrapper">{% for image in project.get_images %}<figure class="b-figure"><a class="b-link" rel="projects" href="javascript:void(0)"><img class="b-image b-thumbnail {% if forloop.last %}last{% endif %}" src="{{ image.thumbnail.url }}" data-cover="{{ image.image.url }}" alt="{{ project.title }}"/></a></figure>{% endfor %}</div>
+                    </div>
+                    <div class="b-description">
+                        <h5>{{ project.title|title }}</h5>
+
+                        <article class="b-article">
+                            <p class="b-plaintext">{{ project.description|safe }}</p>
+                            <a class="b-button btn" href="{% url "get_project" %}{{ project.slug }}/preview">Jump to site</a>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Add fancyBox -->
+    <link rel="stylesheet" href="{% static "portfolio/css/jquery.fancybox.css" %}" type="text/css" media="screen" />
+    <script type="text/javascript" src="{% static "portfolio/js/jquery.fancybox.js" %}"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $(".b-figure .fancybox").fancybox({
+                    helpers : {
+                        overlay : {
+                            css : {
+                                'background' : 'rgba(58, 42, 45, 0.95)'
+                            }
+                        }
+                    },
+                    'autoScale'     :   false,
+                    'fitToView'     :   false,
+                    'transitionIn'	:	'elastic',
+                    'transitionOut'	:	'elastic',
+                    'speedIn'		:	600,
+                    'speedOut'		:	200,
+                    'overlayShow'	:	false
+                }
+            );
+            var leftcolumn =  $(".b-leftcolumn");
+            $(".b-gallery").hover(function(){
+                leftcolumn.addClass('state__active');
+
+            }, function(){
+                leftcolumn.removeClass('state__active');
+            });
+
+            $(".b-gallery .b-thumbnail-wrapper .b-thumbnail").on('click', function(event){
+                var e = event || window.event;
+                e.preventDefault();
+                var image = $(this).attr("data-cover");
+                var target_cover_image = $(".b-gallery .b-cover-wrapper .b-image[data-cover='"+image+"']");
+                var cover_image_active = $(".b-gallery .b-cover-wrapper .state__active");
+                cover_image_active.removeClass('state__active').addClass('hidden');
+                target_cover_image.parent().parent().removeClass('hidden').addClass('state__active');
+            });
+        });
+    </script>
+{% endblock %}
+
+
+{% block header %}
+    {% include "portfolio/block-header.html" with menu='projects' %}
+{% endblock %}

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>{{ project.title }}</title>
+		<link rel="stylesheet" href="/static/{{ project.slug }}/css/style.css">
+		<!--[if lt IE 9]>
+			<script src="/static/{{ project.slug }}/css/html5.js"></script>
+		<![endif]-->
+		<script src="/static/{{ project.slug }}/js/jquery-1.9.1.min.js"></script>
+		<script src="/static/{{ project.slug }}/js/jquery-migrate-1.1.1.js"></script>
+		<script src="/static/{{ project.slug }}/js/audioplayer.js"></script>
+		<script src="/static/{{ project.slug }}/js/scripts.js"></script>
+	</head>
+	<body>
+    
+    	<table class="wrap">
+    		<tr>
+    			<td class="wrapCont">
+                	<div class="wrapPage">
+                		<header>
+                			<div class="headerCont">
+                				<a href="#" class="logo">организатор проекта</a>
+                				<a href="#" class="link1">О деменции</a>
+                				<a href="#" class="logo2">Моя бабушка - яга</a>
+                                
+                				<a href="#" class="link4">Галерея</a>
+                				<a href="#" class="link3">О проекте</a>
+                				<a href="#" class="link2">Сказочные партнеры</a>
+                			</div>
+                		</header>
+                        <section>
+                        	<div class="content">
+                            	<div class="book">
+                            		<a href="" class="prev"></a>
+                            		<div class="bookCont">
+		                            	<div class="start start1">
+		                            		<div class="text">
+		                            			<h2>Ого, вы попали прямо                                    в книгу необычных сказок «Моя бабушка – Яга»!</h2>
+		                            			<p>Это книга для детей и для взрослых. В общем, для семейного чтения. Она рассказывает о том, что может случиться с нашими бабушками и дедушками, если им вовремя не помочь, если пропустить симптомы очень нехорошей болезни – деменции.</p>
+		                            			<p>В книгу вошли 18 сказок, а в ее аудиоверсию – 15 треков. В работе над сборником приняли участие известные блогеры, прекрасные артисты и замечательные иллюстраторы.</p> 
+		                            			<p>Читайте, слушайте и делитесь с друзьями!</p>
+		                            			<p class="open"><a href="">Открыть книгу!</a></p>
+		                            		</div>
+		                            	</div>
+                                    </div>
+                            		<a href="#" class="next"></a>
+                                    <ul class="social">
+                                    	<li><a href="#" class="soc1">fb</a></li>
+                                    	<li><a href="#" class="soc2">tw</a></li>
+                                    	<li><a href="#" class="soc3">vk</a></li>
+                                    </ul>
+                            	</div>
+                            </div>
+                        </section>
+	                    <footer>
+	                    	<div class="footerCont">
+	                    		<div class="author">
+	                    			<img src="/static/{{ project.slug }}/images/a1.png" alt="">
+	                    			<div class="name"><span>сказку читает</span>Алексей Кортнев</div>
+	                    		</div>
+	                    		<div class="player">
+									<audio preload="auto" controls>
+										<source src="/static/{{ project.slug }}/audio/book1/audio.mp3">
+										<source src="/static/{{ project.slug }}/audio/book1/audio.ogg">
+										<source src="/static/{{ project.slug }}/audio/book1/audio.wav">
+									</audio>
+                                </div>
+	                    		<a href="" class="dloadAudio">Скачать Аудио</a>
+	                    		<a href="" class="dloadBook">Скачать Книгу</a>
+	                    	</div>
+	                    </footer>
+                	</div>
+                </td>
+    		</tr>
+    	</table>
+	</body>
+</html>

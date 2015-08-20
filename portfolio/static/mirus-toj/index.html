@@ -1,0 +1,518 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Mirus-toy</title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="/static/{{ project.slug }}/css/style.css" type="text/css" media="screen, projection" />
+    <link rel="stylesheet" href="/static/{{ project.slug }}/css/veles.css" type="text/css" media="screen, projection" />
+    <link rel="stylesheet" href="/static/{{ project.slug }}/css/skinned-select.css" type="text/css" media="screen, projection" />
+    <link rel="stylesheet" href="/static/{{ project.slug }}/css/slides.css" type="text/css" media="screen, projection" />
+    <script type="text/javascript" src="/static/{{ project.slug }}/js/jquery-1.8.1.min.js"></script>
+    <script type="text/javascript" src="/static/{{ project.slug }}/js/skinned-select.js"></script>
+    <script type="text/javascript" src="/static/{{ project.slug }}/js/scrolltopcontrol.js"></script>
+    <script type="text/javascript" src="/static/{{ project.slug }}/js/functions.js"></script>
+    <!--[if lt IE 10]><script type="text/javascript" src="/static/{{ project.slug }}/js/PIE.js"></script><![endif]-->
+    <!-- <script type="text/javascript" src="/static/{{ project.slug }}/js/slides.min.jquery.js"></script> --?>
+    <!--[if IE]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+</head>
+
+<body>
+
+<div id="document-wrapper">
+
+<header id="header">
+    <div class="center">
+        <div class="top-part">
+            <a href="index.html" class="home" title="Главная страница">Главная страница</a>
+            <a href="javascript:void(0)" class="private-cabinet" id="showLogin"><span>Личный кабинет</span></a>
+            <nav class="top-menu">
+                <a href="#">О магазине</a>
+                <a href="#">Оплата и доставка</a>
+                <a href="#">Распродажа</a>
+                <a href="#">Отзывы</a>
+                <a href="#">Контакты</a>
+            </nav>
+        </div>
+        <div class="bottom-part">
+            <div class="phone home">
+                <span>+7 495 225-36-78</span>
+                <a href="#">Хотите, мы позвоним вам?</a>
+            </div>
+            <div class="cart">
+                <span class="label">Вы положили <strong>2</strong> товара на <strong>3200</strong> руб</span>
+                <a href="#" class="order">Оформить покупку</a>
+                <div class="cart-popup">
+                    <a href="javascript:;" class="show" id="showCart">Список товаров в корзине</a>
+                    <div class="popup-block pie" id="cartPopup">
+                        <span class="title">В вашей корзине:</span>
+                        <table>
+                            <tr>
+                                <td class="image"><a href="#"><img src="/static/{{ project.slug }}/img/cart-popup-image-1.jpg" alt="" width="100" height="100" /></a></td>
+                                <td class="item-name">
+                                    <span>Арт: 123-3451</span>
+                                    <a href="#">Кукла Долорес лондинка, Rauber (Робер)</a>
+                                </td>
+                                <td class="count">1 шт</td>
+                                <td class="price">11 300<span class="rub">р</span></td>
+                            </tr>
+                            <tr>
+                                <td class="image"><a href=""><img src="/static/{{ project.slug }}/img/cart-popup-image-2.jpg" alt="" width="100" height="100" /></a></td>
+                                <td class="item-name">
+                                    <span>Арт: 123-3451</span>
+                                    <a href="#">Кукла Долорес лондинка, Rauber (Робер)</a>
+                                </td>
+                                <td class="count">2 шт</td>
+                                <td class="price">22 600<span class="rub">р</span></td>
+                            </tr>
+                        </table>
+                        <span class="triangle">&nbsp;</span>
+                    </div>
+                </div>
+            </div>
+            <div class="logo"><a href="./index.html"><img src="/static/{{ project.slug }}/img/logo.png" alt="Mirus-toy" width="186" height="51" /></a></div>
+        </div>
+    </div>
+</header><!-- #header-->
+
+<div id="content-wrapper">
+
+<section id="middle">
+
+<div id="container">
+<div id="content">
+<div class="top-block pie">
+    <ul class="social">
+        <li><a href="#" class="vk" title="Вконтакте">Вконтакте</a></li>
+        <li><a href="#" class="facebook" title="Facebook">Facebook</a></li>
+        <li><a href="#" class="twitter" title="Twitter">Twitter</a></li>
+        <li><a href="#" class="odnoklassniki" title="Одноклассники">Одноклассники</a></li>
+    </ul>
+    <div class="home-page-image">
+        <img src="/static/{{ project.slug }}/img/home-page-image.png" alt="" width="700" height="208" />
+        <span class="big-text">Т-с-с!</span>
+        <span class="small-text">Ей снятся подарки!</span>
+    </div>
+    <form action="#" method="post" enctype="multipart/form-data" class="filter">
+        <div class="f-content">
+            <label>Поиск</label>
+            <select name="name" class="skinned-select">
+                <option value="1">Все товары</option>
+                <option value="2">Развивающие игрушки</option>
+                <option value="3">Детское творчество, рукоделие</option>
+                <option value="4">Активные игры, игровые комплексы</option>
+                <option value="5">Куклы и аксессуары</option>
+                <option value="6">Мягкие игрушки (плюшевые)</option>
+                <option value="7">Машинки, наборы машин, парковки, треки</option>
+                <option value="8">Радиоуправляемые игрушки</option>
+                <option value="9">Железные дороги</option>
+                <option value="10">Детские кораблики и порты</option>
+            </select>
+            <select name="name" class="skinned-select">
+                <option value="1">По любой цене</option>
+                <option value="2">от 1000р до 5000р</option>
+                <option value="2">от 5000р до 10000р</option>
+                <option value="2">от 10000р до 50000р</option>
+                <option value="2">от 50000р до 100000р</option>
+            </select>
+            <div class="input">
+                <input name="name" type="text" value="По названию" />
+            </div>
+            <input name="" type="image" alt="Submit" src="img/filter-submit.png" />
+        </div>
+    </form>
+</div>
+
+<div class="items-wrapper">
+<h2>Популярные товары</h2>
+<ul class="items-list">
+    <li>
+        <div class="image">
+            <a href=""><img src="/static/{{ project.slug }}/img/item-image-1.jpg" alt="" width="200" height="195" /><span class="action">Акция</span></a>
+        </div>
+        <div class="main-info">
+            <span class="brand">Бренд: <a href="#">Rauber (Робер)</a></span>
+            <h3><a href="">Кукла Долорес блондинка, Rauber (Робер)</a></h3>
+            <div class="rating">
+                <img src="img/star.png" alt="" width="11" height="11" />
+                <img src="img/star.png" alt="" width="11" height="11" />
+                <img src="img/star.png" alt="" width="11" height="11" />
+                <img src="img/star.png" alt="" width="11" height="11" />
+                <img src="img/star.png" alt="" width="11" height="11" />
+            </div>
+            <a href="#" class="add-cart">В корзину</a>
+            <div class="prices-block">
+                <span class="price-one">15000<span class="rub">р</span></span>
+                <span class="price-two">15250<span class="rub">р</span></span>
+                <span class="price-three">15300<span class="rub">р</span></span>
+            </div>
+        </div>
+    </li>
+    <li>
+        <div class="image">
+            <a href=""><img src="/static/{{ project.slug }}/img/item-image-2.jpg" alt="" width="200" height="195" /></a>
+        </div>
+        <div class="main-info">
+            <span class="brand">Бренд: <a href="#">Rauber (Робер)</a></span>
+            <h3><a href="">Кукла Долорес блондинка, Rauber (Робер)</a></h3>
+            <div class="rating">
+                <img src="img/star.png" alt="" width="11" height="11" />
+                <img src="img/star.png" alt="" width="11" height="11" />
+                <img src="img/star.png" alt="" width="11" height="11" />
+                <img src="img/star.png" alt="" width="11" height="11" />
+                <img src="img/star.png" alt="" width="11" height="11" />
+            </div>
+            <a href="#" class="add-cart">В корзину</a>
+            <div class="prices-block">
+                <span class="price-one">15000<span class="rub">р</span></span>
+                <span class="price-two">15250<span class="rub">р</span></span>
+                <span class="price-three">15300<span class="rub">р</span></span>
+            </div>
+        </div>
+    </li>
+    <li>
+        <div class="image">
+            <a href=""><img src="/static/{{ project.slug }}/img/item-image-3.jpg" alt="" width="200" height="195" /></a>
+        </div>
+        <div class="main-info">
+            <span class="brand">Бренд: <a href="#">Rauber (Робер)</a></span>
+            <h3><a href="">Кукла Долорес блондинка, Rauber (Робер)</a></h3>
+            <div class="rating">
+                <img src="img/star.png" alt="" width="11" height="11" />
+                <img src="img/star.png" alt="" width="11" height="11" />
+                <img src="img/star.png" alt="" width="11" height="11" />
+                <img src="img/star.png" alt="" width="11" height="11" />
+                <img src="img/star.png" alt="" width="11" height="11" />
+            </div>
+            <a href="#" class="add-cart">В корзину</a>
+            <div class="prices-block">
+                <span class="price-one">15000<span class="rub">р</span></span>
+                <span class="price-two">15250<span class="rub">р</span></span>
+                <span class="price-three">15300<span class="rub">р</span></span>
+            </div>
+        </div>
+    </li>
+    <li>
+        <div class="image">
+            <a href=""><img src="/static/{{ project.slug }}/img/item-image-4.jpg" alt="" width="200" height="195" /></a>
+        </div>
+        <div class="main-info">
+            <span class="brand">Бренд: <a href="#">Rauber (Робер)</a></span>
+            <h3><a href="">Кукла Долорес блондинка, Rauber (Робер)</a></h3>
+            <div class="rating">
+                <img src="img/star.png" alt="" width="11" height="11" />
+                <img src="img/star.png" alt="" width="11" height="11" />
+                <img src="img/star.png" alt="" width="11" height="11" />
+                <img src="img/star.png" alt="" width="11" height="11" />
+                <img src="img/star.png" alt="" width="11" height="11" />
+            </div>
+            <a href="#" class="add-cart">В корзину</a>
+            <div class="prices-block">
+                <span class="price-one">15000<span class="rub">р</span></span>
+                <span class="price-two">15250<span class="rub">р</span></span>
+                <span class="price-three">15300<span class="rub">р</span></span>
+            </div>
+        </div>
+    </li>
+    <li>
+        <div class="image">
+            <a href=""><img src="/static/{{ project.slug }}/img/item-image-5.jpg" alt="" width="200" height="195" /></a>
+        </div>
+        <div class="main-info">
+            <span class="brand">Бренд: <a href="#">Rauber (Робер)</a></span>
+            <h3><a href="">Кукла Долорес блондинка, Rauber (Робер)</a></h3>
+            <div class="rating">
+                <img src="img/star.png" alt="" width="11" height="11" />
+                <img src="img/star.png" alt="" width="11" height="11" />
+                <img src="img/star.png" alt="" width="11" height="11" />
+                <img src="img/star.png" alt="" width="11" height="11" />
+                <img src="img/star.png" alt="" width="11" height="11" />
+            </div>
+            <a href="#" class="add-cart">В корзину</a>
+            <div class="prices-block">
+                <span class="price-one">15000<span class="rub">р</span></span>
+                <span class="price-two">15250<span class="rub">р</span></span>
+                <span class="price-three">15300<span class="rub">р</span></span>
+            </div>
+        </div>
+    </li>
+    <li>
+        <div class="image">
+            <a href=""><img src="/static/{{ project.slug }}/img/item-image-6.jpg" alt="" width="200" height="195" /></a>
+        </div>
+        <div class="main-info">
+            <span class="brand">Бренд: <a href="#">Rauber (Робер)</a></span>
+            <h3><a href="">Кукла Долорес блондинка, Rauber (Робер)</a></h3>
+            <div class="rating">
+                <img src="img/star.png" alt="" width="11" height="11" />
+                <img src="img/star.png" alt="" width="11" height="11" />
+                <img src="img/star.png" alt="" width="11" height="11" />
+                <img src="img/star.png" alt="" width="11" height="11" />
+                <img src="img/star.png" alt="" width="11" height="11" />
+            </div>
+            <a href="#" class="add-cart">В корзину</a>
+            <div class="prices-block">
+                <span class="price-one">15000<span class="rub">р</span></span>
+                <span class="price-two">15250<span class="rub">р</span></span>
+                <span class="price-three">15300<span class="rub">р</span></span>
+            </div>
+        </div>
+    </li>
+    <li>
+        <div class="image">
+            <a href=""><img src="/static/{{ project.slug }}/img/item-image-7.jpg" alt="" width="200" height="195" /></a>
+        </div>
+        <div class="main-info">
+            <span class="brand">Бренд: <a href="#">Rauber (Робер)</a></span>
+            <h3><a href="">Кукла Долорес блондинка, Rauber (Робер)</a></h3>
+            <div class="rating">
+                <img src="img/star.png" alt="" width="11" height="11" />
+                <img src="img/star.png" alt="" width="11" height="11" />
+                <img src="img/star.png" alt="" width="11" height="11" />
+                <img src="img/star.png" alt="" width="11" height="11" />
+                <img src="img/star.png" alt="" width="11" height="11" />
+            </div>
+            <a href="#" class="add-cart">В корзину</a>
+            <div class="prices-block">
+                <span class="price-one">15000<span class="rub">р</span></span>
+                <span class="price-two">15250<span class="rub">р</span></span>
+                <span class="price-three">15300<span class="rub">р</span></span>
+            </div>
+        </div>
+    </li>
+    <li>
+        <div class="image">
+            <a href=""><img src="/static/{{ project.slug }}/img/item-image-8.jpg" alt="" width="200" height="195" /></a>
+        </div>
+        <div class="main-info">
+            <span class="brand">Бренд: <a href="#">Rauber (Робер)</a></span>
+            <h3><a href="">Кукла Долорес блондинка, Rauber (Робер)</a></h3>
+            <div class="rating">
+                <img src="img/star.png" alt="" width="11" height="11" />
+                <img src="img/star.png" alt="" width="11" height="11" />
+                <img src="img/star.png" alt="" width="11" height="11" />
+                <img src="img/star.png" alt="" width="11" height="11" />
+                <img src="img/star.png" alt="" width="11" height="11" />
+            </div>
+            <a href="#" class="add-cart">В корзину</a>
+            <div class="prices-block">
+                <span class="price-one">15000<span class="rub">р</span></span>
+                <span class="price-two">15250<span class="rub">р</span></span>
+                <span class="price-three">15300<span class="rub">р</span></span>
+            </div>
+        </div>
+    </li>
+    <li>
+        <div class="image">
+            <a href=""><img src="/static/{{ project.slug }}/img/item-image-9.jpg" alt="" width="200" height="195" /></a>
+        </div>
+        <div class="main-info">
+            <span class="brand">Бренд: <a href="#">Rauber (Робер)</a></span>
+            <h3><a href="">Кукла Долорес блондинка, Rauber (Робер)</a></h3>
+            <div class="rating">
+                <img src="img/star.png" alt="" width="11" height="11" />
+                <img src="img/star.png" alt="" width="11" height="11" />
+                <img src="img/star.png" alt="" width="11" height="11" />
+                <img src="img/star.png" alt="" width="11" height="11" />
+                <img src="img/star.png" alt="" width="11" height="11" />
+            </div>
+            <a href="#" class="add-cart">В корзину</a>
+            <div class="prices-block">
+                <span class="price-one">15000<span class="rub">р</span></span>
+                <span class="price-two">15250<span class="rub">р</span></span>
+                <span class="price-three">15300<span class="rub">р</span></span>
+            </div>
+        </div>
+    </li>
+</ul>
+</div>
+<div class="your-see">
+    <h2>Вы уже смотрели</h2>
+    <ul>
+        <li>
+            <div class="image"><a href=""><img src="/static/{{ project.slug }}/img/your-see-image-1.jpg" alt="" width="116" height="106" /></a></div>
+            <div class="item-name"><a href="">Обучающий компьютер — робот Валл-И VTech</a></div>
+            <span class="price">9500<span class="rub">р</span></span>
+            <a href="#" class="add-cart">В корзину</a>
+        </li>
+        <li>
+            <div class="image"><a href=""><img src="/static/{{ project.slug }}/img/your-see-image-2.jpg" alt="" width="116" height="106" /></a></div>
+            <div class="item-name"><a href="">Обучающий компьютер — робот Валл-И VTech</a></div>
+            <span class="price">9500<span class="rub">р</span></span>
+            <a href="#" class="add-cart">В корзину</a>
+        </li>
+        <li>
+            <div class="image"><a href=""><img src="/static/{{ project.slug }}/img/your-see-image-3.jpg" alt="" width="116" height="106" /></a></div>
+            <div class="item-name"><a href="">Обучающий компьютер — робот Валл-И VTech</a></div>
+            <span class="price">9500<span class="rub">р</span></span>
+            <a href="#" class="add-cart">В корзину</a>
+        </li>
+        <li>
+            <div class="image"><a href=""><img src="/static/{{ project.slug }}/img/your-see-image-4.jpg" alt="" width="116" height="106" /></a></div>
+            <div class="item-name"><a href="">Обучающий компьютер — робот Валл-И VTech</a></div>
+            <span class="price">9500<span class="rub">р</span></span>
+            <a href="#" class="add-cart">В корзину</a>
+        </li>
+        <li>
+            <div class="image"><a href=""><img src="/static/{{ project.slug }}/img/your-see-image-5.jpg" alt="" width="116" height="106" /></a></div>
+            <div class="item-name"><a href="">Обучающий компьютер — робот Валл-И VTech</a></div>
+            <span class="price">9500<span class="rub">р</span></span>
+            <a href="#" class="add-cart">В корзину</a>
+        </li>
+    </ul>
+</div>
+<div class="text-wrapper">
+    <h3>Mirus-toy (Мирус-Той)</h3>
+    <p>Lorem Ipsum — это текст-«рыба», часто используемый в печати и веб-дизайне. Lorem Ipsum является стандартной «рыбой» для текстов на латинице с начала XVI века. В то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов, используя Lorem Ipsum для распечатки образцов. </p>
+    <p><a href="#">Подробнее о компании&nbsp;&rarr;</a></p>
+</div>
+</div><!-- #content-->
+</div><!-- #container-->
+
+<aside id="sideLeft">
+    <div class="left-menu">
+        <span>У нас в магазине:</span>
+        <ul>
+            <li><a href="#">Детский транспорт</a></li>
+            <li class="open"><a href="#">Каталог детских игрушек</a>
+                <ul>
+                    <li><a href="#">Развивающие игрушки</a></li>
+                    <li><a href="#">Детское творчество, рукоделие</a></li>
+                    <li><a href="#">Активные игры, игровые комплексы</a></li>
+                    <li><a href="#">Куклы и аксессуары</a></li>
+                    <li><a href="#">Мягкие игрушки (плюшевые)</a></li>
+                    <li><a href="#">Машинки, наборы машин, парковки, треки</a></li>
+                    <li><a href="#">Радиоуправляемые игрушки</a></li>
+                    <li><a href="#">Железные дороги</a></li>
+                    <li><a href="#">Детские кораблики и порты</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Детские товары от 0 до 3</a></li>
+            <li><a href="#">Детская мебель</a></li>
+            <li><a href="#">Детская одежда</a></li>
+            <li><a href="#">Детский калейдоскоп</a></li>
+        </ul>
+    </div>
+    <div class="best-brands">
+        <span class="title">Лучшие бренды</span>
+        <ul>
+            <li><a href="#"><img src="/static/{{ project.slug }}/img/tiny-love.png" alt="Tiny Love" width="75" height="30" /></a></li>
+            <li><a href="#"><img src="/static/{{ project.slug }}/img/tomy.png" alt="Tomy" width="75" height="30" /></a></li>
+            <li><a href="#"><img src="/static/{{ project.slug }}/img/fisher-price.png" alt="Fisher Price" width="75" height="30" /></a></li>
+            <li><a href="#"><img src="/static/{{ project.slug }}/img/quaps.png" alt="Quaps" width="75" height="30" /></a></li>
+            <li><a href="#"><img src="/static/{{ project.slug }}/img/wow.png" alt="WOW" width="75" height="30" /></a></li>
+            <li><a href="#"><img src="/static/{{ project.slug }}/img/smoby.png" alt="Smoby" width="75" height="30" /></a></li>
+            <li><a href="#"><img src="/static/{{ project.slug }}/img/kskidi.png" alt="Ks Kidi" width="75" height="30" /></a></li>
+            <li><a href="#"><img src="/static/{{ project.slug }}/img/kiddieland.png" alt="Kiddieland" width="75" height="30" /></a></li>
+            <li><a href="#"><img src="/static/{{ project.slug }}/img/imtoy.png" alt="Im Toy" width="75" height="30" /></a></li>
+            <li><a href="#"><img src="/static/{{ project.slug }}/img/golubaya-strela.png" alt="Голубая стрела" width="75" height="30" /></a></li>
+            <li><a href="#"><img src="/static/{{ project.slug }}/img/sylyonion-fammilies.png" alt="Sylyonion Fammilies" width="75" height="30" /></a></li>
+            <li><a href="#"><img src="/static/{{ project.slug }}/img/taf-toys.png" alt="Taf Toys" width="75" height="30" /></a></li>
+            <li><a href="#"><img src="/static/{{ project.slug }}/img/vtech.png" alt="Vtech" width="75" height="30" /></a></li>
+            <li><a href="#"><img src="/static/{{ project.slug }}/img/unknown.png" alt="Unknown" width="75" height="30" /></a></li>
+            <li><a href="#"><img src="/static/{{ project.slug }}/img/chuggington.png" alt="Chuggington" width="75" height="30" /></a></li>
+            <li><a href="#"><img src="/static/{{ project.slug }}/img/bright-stars.png" alt="Bright Stars" width="75" height="30" /></a></li>
+            <li><a href="#"><img src="/static/{{ project.slug }}/img/fenbo.png" alt="Fenbo" width="75" height="30" /></a></li>
+            <li><a href="#"><img src="/static/{{ project.slug }}/img/miracle-bubbles.png" alt="Miracle Bubbles" width="75" height="30" /></a></li>
+            <li><a href="#"><img src="/static/{{ project.slug }}/img/escapes.png" alt="Escapes" width="75" height="30" /></a></li>
+        </ul>
+        <div class="all-brands"><a href="#">Все бренды &rarr;</a></div>
+    </div>
+    <div class="news">
+        <span class="title">Новости</span>
+        <ul>
+            <li>
+                <span class="date">28/09</span>
+                <a href="#">Наша компания снова расширяет список услуг</a>
+                <p>В перечень оказываемых услуг входит: выбор индивидуальной игровой программы , проверка мульти истории, изучение финансового состояния покупателя&nbsp;&rarr;</p>
+            </li>
+            <li>
+                <span class="date">27/09</span>
+                <a href="#">Новая коллекция кубиков для конструктора LEGO</a>
+                <p>Эта потрясающая коллекция свалит с ног любого папу, который не доиграл в детстве&nbsp;&rarr;</p>
+            </li>
+        </ul>
+        <div class="all-news"><a href="#">Все новости &rarr;</a></div>
+    </div>
+</aside><!-- #sideLeft -->
+
+</section><!-- #middle-->
+
+<footer id="footer">
+    <nav class="footer-menu">
+        <a href="#">О магазине</a>
+        <a href="#">Оплата и доставка</a>
+        <a href="#">Распродажа</a>
+        <a href="#">Отзывы</a>
+        <a href="#">Контакты</a>
+    </nav>
+    <div class="work-time">
+        <span class="big">Время работы</span>
+        <p>Прием заказов: круглосуточно <br />Доставка: Пн-Вс, 09:00 - 21:00</p>
+    </div>
+    <div class="any-questions">
+        <span class="big">Есть вопросы?</span>
+        <p class="phone">Звоните:<br />(495) 410-20-25</p>
+        <p class="email">Пишите:<br /><a href="mailto:inbox@company.net">inbox@company.net</a></p>
+    </div>
+    <div class="other">
+        <p>&copy;1917—2012 Компания <a href="http://www.company.net">www.company.net</a><br />Мы предлагаем самые лучшие услуги. Все остальные нам завидуют!</p>
+        <small>Все здесь принадлежит нам. Копирование разрешается только при наличии<br />письменного разрешения заверненного сургучной гербовой печатью.</small>
+    </div>
+    <div class="right-part">
+        <div class="payment">
+            <span>Мы принимаем к оплате:</span>
+            <ul>
+                <li><a href="#" title="Webmoney"><img src="img/webmoney.png" alt="Webmoney" width="32" height="22" /></a></li>
+                <li><a href="#" title="Яндекс деньги"><img src="img/yandex.png" alt="Яндекс деньги" width="32" height="22" /></a></li>
+                <li><a href="#" title="Visa"><img src="img/visa.png" alt="Visa" width="32" height="22" /></a></li>
+                <li><a href="#" title="Mastercard"><img src="img/mastercard.png" alt="Mastercard" width="32" height="22" /></a></li>
+            </ul>
+        </div>
+        <div class="social">
+            <span>Мы в соцсетях:</span>
+            <ul>
+                <li><a href="#" class="vk" title="Вконтакте">Вконтакте</a></li>
+                <li><a href="#" class="facebook" title="Facebook">Facebook</a></li>
+                <li><a href="#" class="twitter" title="Twitter">Twitter</a></li>
+                <li><a href="#" class="odnoklassniki" title="Одноклассники">Одноклассники</a></li>
+            </ul>
+        </div>
+        <ul class="counters">
+            <li><a href="#"><img src="/static/{{ project.slug }}/img/counter-1.png" alt="Counter" width="88" height="15" /></a></li>
+            <li><a href="#"><img src="/static/{{ project.slug }}/img/counter-2.png" alt="Counter" width="88" height="31" /></a></li>
+        </ul>
+        <a href="http://www.lukyan-dm.ru" class="develop" title="L.D.M. & Co">Создание сайта:</a>
+    </div>
+    <a href="#top" class="top">Вверх</a>
+</footer><!-- #footer -->
+
+</div><!-- #content-wrapper -->
+
+</div><!-- #document-wrapper -->
+
+<div class="login" id="loginPopupBlock">
+    <div class="block-style pie">
+        <div class="logo"><a href="#"><img src="img/logo.png" alt="Mirus-toy" width="186" height="51" /></a></div>
+        <form action="#" method="post" enctype="multipart/form-data">
+            <label>Логин</label>
+            <div class="input">
+                <input name="" type="text">
+            </div>
+            <label>Пароль</label>
+            <div class="input">
+                <input name="" type="text">
+            </div>
+            <div class="submit"><input name="name" type="submit" value="Войти"></div>
+            <a href="#">Напомнить пароль</a>
+        </form>
+        <a href="javascript:;" class="close" title="Закрыть">Закрыть</a>
+    </div>
+</div>
+
+
+
+</body>
+</html>

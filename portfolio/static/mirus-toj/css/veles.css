@@ -1,0 +1,11 @@
+  @font-face {
+    font-family: 'veles';
+    src: url('../font/veles.eot');
+    src: url('../font/veles.eot?#iefix') format('embedded-opentype'),
+         url('../font/veles.woff') format('woff'),
+         url('../font/veles.ttf') format('truetype'),
+         url('../font/veles.svg#veles') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}

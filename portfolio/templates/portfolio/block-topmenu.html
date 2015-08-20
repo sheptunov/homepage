@@ -1,0 +1,19 @@
+{% load url from future %}
+{% if active %}
+    <li class="b-list-item hello {% if active == "index" %}active{% endif %}">
+        <a href="{% url "index" %}#hello">Hello</a>
+    </li>
+    <li class="b-list-item about {% if active == "about" %}active{% endif %}">
+        <a href="{% url "index" %}#about">About</a>
+    </li>
+    <li class="b-list-item skills" {% if active == "skills" %}active{% endif %}>
+        <a href="{% url "index" %}#skills">Skills</a>
+    </li>
+    <li class="b-list-item projects {% if active == "projects" %}active{% endif %}">
+        <a href="{% url "index" %}#projects">Projects</a>
+    </li>
+    <li class="b-list-item feedback {% if active == "feedback" %}active{% endif %}">
+        <a href="{% url "index" %}#feedback">Feedback</a>
+    </li>
+{% endif %}
+

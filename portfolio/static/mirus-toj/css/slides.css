@@ -1,0 +1,46 @@
+/*
+	Slides container
+	Important:
+	Set the width of your slides container
+	Set to display none, prevents content flash
+*/
+
+
+#gallery {
+	float: left;
+	background: #ffe6d2;
+	background: -moz-linear-gradient(top,  #ffe6d2 0%, #c8dfec 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffe6d2), color-stop(100%,#c8dfec));
+	background: -webkit-linear-gradient(top,  #ffe6d2 0%,#c8dfec 100%);
+	background: -o-linear-gradient(top,  #ffe6d2 0%,#c8dfec 100%);
+	background: -ms-linear-gradient(top,  #ffe6d2 0%,#c8dfec 100%);
+	background: linear-gradient(to bottom,  #ffe6d2 0%,#c8dfec 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffe6d2', endColorstr='#c8dfec',GradientType=0 );
+	padding: 10px;
+	border-radius: 15px;
+}	#gallery .slides_container {
+		display: none;
+		position: relative;
+		overflow: hidden;
+		width: 350px;
+		/*height: 350px;*/
+	}
+	#gallery .pagination {
+		*min-height: 110px;
+		width: 350px;
+		margin: 0;
+		padding: 0;
+	}	#gallery .pagination li {
+			float: left;
+			margin: 10px 10px 0 0;
+			list-style: none;
+		}
+		#gallery .pagination li a {
+			display: block;
+			width: 88px;
+			height: 88px;
+			border: 1px solid #fff;
+		}
+		#gallery .pagination li.current a {
+			border: 1px solid #eb4da2;
+		}

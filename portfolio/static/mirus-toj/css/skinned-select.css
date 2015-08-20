@@ -1,0 +1,39 @@
+div.cmf-skinned-select {
+	overflow: hidden;
+    background: url(../img/select-skin.png) no-repeat 0 0;
+	width: 159px;
+	height: 30px;
+}
+div.cmf-skinned-text {
+	overflow: hidden;
+	width: 120px !important;	
+	height: 30px;
+	padding-left: 10px;
+ 	text-indent: 10px;
+	font: 15px/30px "Trebuchet MS", Arial, Helvetica, sans-serif;
+	white-space: nowrap;
+	color: #737373;
+}
+div.cmf-skinned-select select {
+	width: 162px;
+	height: 32px;
+	margin: 0;
+	padding: 0;
+	line-height: 32px;
+	background: none;
+	opacity: 0;
+	filter: alpha(opacity = 0);
+	moz-opacity: 0;
+	outline: none;
+	border: 0;
+}
+
+
+/* Safari */
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+div.cmf-skinned-select select { 
+	margin-top: -4px;
+
+} 
+}
+

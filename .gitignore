@@ -1,0 +1,13 @@
+.pyc
+.xml
+.idea/
+.idea/*
+temp/
+temp/*
+portfolio/static/admin/
+portfolio/static/cms/
+portfolio/static/debug_toolbar/
+portfolio/static/debug_toolbar/
+portfolio/static/django_extensions/
+portfolio/static/rest_framework/
+portfolio/static/suit*
